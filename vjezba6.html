@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <title>Liste</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(white, #f3f3f3);
+      margin: 50px 80px;
+      font-size: 18px;
+    }
+
+    ul, ol {
+      margin: 10px 40px;
+    }
+
+    dl {
+      margin: 10px 60px;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+
+    dd {
+      margin-left: 20px;
+    }
+
+    .lists {
+      display: flex;
+      gap: 80px;
+      justify-content: flex-start;
+    }
+
+    .nested {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lists">
+    <!-- Neuređena lista -->
+    <div>
+      <ul>
+        <li>Samsung</li>
+        <li>Apple</li>
+        <li>Huawei</li>
+        <li>Panasonic</li>
+        <li>Motorola</li>
+      </ul>
+    </div>
+
+    <!-- Uređena lista -->
+    <div>
+      <ol>
+        <li>Samsung</li>
+        <li>Apple</li>
+        <li>Huawei</li>
+        <li>Panasonic</li>
+        <li>Motorola</li>
+      </ol>
+    </div>
+
+    <!-- Definicijska lista -->
+    <div>
+      <dl>
+        <dt>Samsung</dt>
+        <dd>Južnokorejski proizvođač mobilnih uređaja.</dd>
+        <dt>Apple</dt>
+        <dd>Američka tvrtka poznata po iPhone uređajima.</dd>
+        <dt>Huawei</dt>
+        <dd>Kineski proizvođač mobilnih telefona i opreme.</dd>
+        <dt>Panasonic</dt>
+        <dd>Japanski proizvođač elektronike.</dd>
+        <dt>Motorola</dt>
+        <dd>Američki proizvođač mobilnih uređaja.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- Ugnježdena lista -->
+  <div class="nested">
+    <ol>
+      <li>Samsung
+        <ul>
+          <li>Galaxy S23 Ultra</li>
+          <li>Galaxy S23+</li>
+          <li>Galaxy S23</li>
+          <li>Galaxy Z Fold 5</li>
+          <li>Galaxy Z Flip 5</li>
+        </ul>
+      </li>
+      <li>Apple
+        <ol>
+          <li>iPhone 12</li>
+          <li>iPhone 13</li>
+          <li>iPhone 14 Plus</li>
+          <li>iPhone 15 Pro</li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+
+</body>
+</html>
