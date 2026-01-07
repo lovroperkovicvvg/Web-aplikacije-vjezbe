@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Forma primjer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 300px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 3px;
+        }
+        .radio-group {
+            margin-top: 10px;
+        }
+        .buttons {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<form action="obrada.php" method="post">
+    <label for="ime">Ime:</label>
+    <input type="text" id="ime" name="ime" placeholder="Unesite ime" required>
+
+    <label for="prezime">Prezime:</label>
+    <input type="text" id="prezime" name="prezime" placeholder="Unesite prezime" required>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+    <div class="radio-group">
+        <input type="radio" id="musko" name="spol" value="musko">
+        <label for="musko">Muško</label>
+
+        <input type="radio" id="zensko" name="spol" value="zensko">
+        <label for="zensko">Žensko</label>
+    </div>
+
+    <div class="buttons">
+        <input type="submit" value="Pošalji">
+        <input type="reset" value="Poništi">
+    </div>
+</form>
+
+</body>
+</html>
