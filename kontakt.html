@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kontakt – LEGO klub Zagreb</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        main {
+            background-color: white;
+            border: 1px solid #cccccc;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 6px;
+            margin-top: 4px;
+            border: 1px solid #cccccc;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: blue;
+            outline: none;
+            background-color: #eef6ff;
+        }
+
+        input[type="checkbox"]:checked {
+            accent-color: green;
+        }
+
+        input:disabled {
+            background-color: #dddddd;
+        }
+
+        input:enabled {
+            background-color: #ffffff;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 8px 16px;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <h1>Kontaktirajte nas – LEGO podrška</h1>
+
+    <form>
+        <label>Ime</label>
+        <input type="text" placeholder="Vaše ime...">
+
+        <label>Prezime</label>
+        <input type="text" placeholder="Vaše prezime...">
+
+        <label>E-mail</label>
+        <input type="email" placeholder="Vaš e-mail...">
+
+        <label>Država</label>
+        <select>
+            <option>Hrvatska</option>
+            <option>Slovenija</option>
+            <option>BiH</option>
+        </select>
+
+        <label>Poruka</label>
+        <textarea rows="4"></textarea>
+
+        <label>
+            <input type="checkbox"> Želim primati newsletter
+        </label>
+
+        <label>Način dostave</label>
+        <label><input type="radio" name="dostava"> E-mail</label>
+        <label><input type="radio" name="dostava"> Pošta</label>
+
+        <label>Promo kod</label>
+        <input type="text" disabled value="LEGO2024">
+
+        <button type="submit">Pošalji</button>
+    </form>
+</main>
+
+</body>
+</html>
