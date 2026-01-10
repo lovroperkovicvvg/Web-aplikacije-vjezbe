@@ -1,0 +1,673 @@
+/* ============================
+   RESET & GLOBAL
+   ============================ */
+
+/* Reset osnovnih margina i paddinga */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #1e5bb8;
+  --primary-dark: #174a94;
+  --secondary: #ffcc00;
+  --neutral-bg: #f0f0f0;
+  --neutral-text: #333333;
+  --neutral-muted: #555555;
+  --neutral-border: #cccccc;
+  --form-border: #b5b5b5;
+  --white: #ffffff;
+  --soft-highlight: #fff7cc;
+  --set-city: #1e5bb8;
+  --set-technic: #ffcc00;
+  --set-friends: #666666;
+}
+
+/* Osnovni stil za cijelu stranicu */
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  background-color: var(--neutral-bg);
+  color: var(--neutral-text);
+  line-height: 1.5;
+}
+
+/* Omotač da sadržaj ne bude preko cijelog ekrana */
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+/* ============================
+   HEADER
+   ============================ */
+
+header {
+  background-color: var(--white);
+  border: 2px solid var(--secondary);
+  margin: 20px 0 10px 0;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px var(--neutral-border);
+}
+
+/* Banner slika unutar headera */
+.banner img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  border-bottom: 3px solid var(--secondary);
+}
+
+/* ============================
+   NAVIGACIJA – HAMBURGER NA MOBILU
+   ============================ */
+
+.main-nav {
+  margin-top: 10px;
+  background-color: var(--neutral-text);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hamburger traka – mobile first */
+.main-nav::before {
+  content: "☰ Meni";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* Lista u navigaciji – skrivena dok se ne "otvori" */
+.main-nav ul {
+  list-style-type: none;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem 0.9rem;
+}
+
+/* Kad korisnik "otvori" meni (hover/focus) */
+.main-nav:hover ul,
+.main-nav:focus-within ul {
+  display: flex;
+}
+
+.main-nav li {
+  margin: 0;
+}
+
+/* Linkovi u navigaciji */
+.main-nav a {
+  display: block;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  background-color: var(--neutral-text);
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+/* PSEUDO KLASE */
+.main-nav a:hover,
+.main-nav a:focus {
+  background-color: var(--neutral-muted);
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+.main-nav a:active {
+  transform: scale(0.97);
+}
+
+.main-nav a:visited {
+  color: var(--neutral-muted);
+}
+
+/* SELEKTORI ATRIBUTA NA LINKOVIMA */
+.main-nav a[href="galerija.html"] {
+  background-color: var(--primary);
+}
+
+.main-nav a[target="_blank"] {
+  background-color: var(--secondary);
+  color: var(--neutral-text);
+}
+
+.main-nav a[target="_blank"]::after {
+  content: " ↗";
+  font-size: 0.85em;
+}
+
+/* ============================
+   GLAVNI SADRŽAJ
+   ============================ */
+
+main {
+  background-color: var(--white);
+  border: 1px solid var(--neutral-border);
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px var(--neutral-border);
+}
+
+.section {
+  margin-bottom: 24px;
+}
+
+/* Header sekcije */
+.section-header {
+  background-color: var(--soft-highlight);
+  border-left: 4px solid var(--secondary);
+  padding: 12px 18px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+}
+
+.section-header h1 {
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-family: "Lobster", "Georgia", serif;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: var(--neutral-muted);
+}
+
+/* Naslovi sekcija */
+.section-title {
+  font-size: 20px;
+  color: var(--neutral-text);
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--neutral-border);
+  padding-bottom: 4px;
+  font-family: "Lobster", "Georgia", serif;
+}
+
+main h1 {
+  text-align: center;
+  color: var(--primary);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-family: "Lobster", "Georgia", serif;
+}
+
+main h2 {
+  margin-top: 15px;
+  margin-bottom: 8px;
+  color: var(--neutral-text);
+  font-size: 20px;
+  font-family: "Lobster", "Georgia", serif;
+}
+
+main p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.uvod {
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Kartica "osnovan" */
+#osnovan {
+  background-color: var(--white);
+  border: 2px solid var(--secondary);
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+/* Istaknute riječi */
+.vazno {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Link kartica/gumb */
+.lego-link {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  border: 2px solid var(--primary);
+  padding: 8px 16px;
+  color: var(--primary);
+  background-color: var(--white);
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.lego-link:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* Slika i opis */
+.image-box {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.lego-slika {
+  width: 100%;
+  max-width: 320px;
+  border: 2px solid var(--neutral-border);
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0 8px 20px var(--neutral-border);
+}
+
+.image-caption {
+  font-size: 14px;
+  color: var(--neutral-muted);
+  margin-top: 5px;
+}
+
+.lista-tema {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  list-style-type: square;
+}
+
+.napomena {
+  color: var(--primary);
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* TABLICA RASPOREDA RADIONICA */
+.raspored {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.raspored caption {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.raspored th,
+.raspored td {
+  border: 1px solid var(--neutral-border);
+  padding: 6px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.raspored th {
+  background-color: var(--soft-highlight);
+}
+
+/* Zebra efekt */
+.raspored tbody tr:nth-child(even) {
+  background-color: var(--neutral-bg);
+}
+
+/* ============================
+   KONTAKT FORMA – LEGO SUPPORT
+   ============================ */
+
+.lego-contact,
+.kontakt-forma {
+  margin-top: 2rem;
+  padding: 1.75rem 1.25rem;
+  background-color: var(--neutral-bg);
+  border-radius: 12px;
+  border: 2px solid var(--primary);
+  box-shadow: 0 8px 20px var(--neutral-border);
+}
+
+.lego-contact h2,
+.kontakt-forma h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Lobster", "Georgia", serif;
+}
+
+.lego-contact p,
+.kontakt-forma p {
+  margin-bottom: 1.25rem;
+}
+
+/* Layout forme – mobile: jedan stupac */
+.lego-form,
+form {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.lego-form .form-row,
+form > div {
+  margin-bottom: 1rem;
+}
+
+.lego-form label,
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+/* Osnovni stil za inpute, select i textarea */
+.lego-form input[type="text"],
+.lego-form input[type="email"],
+.lego-form input[type="password"],
+.lego-form select,
+.lego-form textarea,
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--form-border);
+  border-radius: 6px;
+  font: inherit;
+  background-color: var(--white);
+}
+
+.lego-form textarea,
+form textarea {
+  resize: vertical;
+}
+
+/* Red za checkbox/radio + labelu */
+.lego-form .option,
+form .option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.lego-form .option input[type="checkbox"],
+.lego-form .option input[type="radio"],
+form input[type="checkbox"],
+form input[type="radio"] {
+  width: auto;
+}
+
+/* :FOCUS – aktivno polje */
+.lego-form input:focus,
+.lego-form select:focus,
+.lego-form textarea:focus,
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: var(--primary);
+  background-color: var(--white);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--secondary);
+}
+
+/* :CHECKED – checkbox i radio */
+.lego-form input[type="checkbox"]:checked + label,
+.lego-form input[type="radio"]:checked + label,
+form input[type="checkbox"]:checked + label,
+form input[type="radio"]:checked + label {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* :DISABLED i :ENABLED */
+.lego-form input:disabled,
+.lego-form select:disabled,
+.lego-form textarea:disabled,
+form input:disabled,
+form select:disabled,
+form textarea:disabled {
+  background-color: var(--neutral-border);
+  color: var(--neutral-muted);
+  cursor: not-allowed;
+}
+
+/* GUMB – :hover */
+.lego-form .btn-send,
+form button {
+  display: inline-block;
+  padding: 0.6rem 1.7rem;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.lego-form .btn-send:hover,
+form button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ============================
+   GALERIJA SLIKA
+   ============================ */
+
+.lego-gallery {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem 1.5rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--neutral-border);
+  box-shadow: 0 8px 22px var(--neutral-border);
+}
+
+.lego-gallery h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Lobster", "Georgia", serif;
+}
+
+.lego-gallery p {
+  margin-bottom: 1.5rem;
+}
+
+/* MOBILE FIRST – SLIKE JEDNA ISPOD DRUGE */
+.lego-gallery-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Kartica za svaki LEGO set */
+.gallery-item {
+  background-color: var(--white);
+  border-radius: 12px;
+  border: 2px solid var(--neutral-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+}
+
+/* Tekst ispod slike */
+.gallery-item figcaption {
+  padding: 0.75rem 1rem 1rem;
+  font-size: 0.9rem;
+  color: var(--neutral-muted);
+  text-align: center;
+}
+
+/* Selektori atributa – boja okvira po tipu seta */
+.gallery-item[data-set="city"] {
+  border-color: var(--set-city);
+}
+
+.gallery-item[data-set="technic"] {
+  border-color: var(--set-technic);
+}
+
+.gallery-item[data-set="friends"] {
+  border-color: var(--set-friends);
+}
+
+/* Malo zaobljeni kutovi za .jpg slike */
+.gallery-item img[src$=".jpg"] {
+  border-radius: 0;
+}
+
+/* Hover efekt – moderan “card” */
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px var(--neutral-border);
+  border-color: var(--primary);
+  cursor: pointer;
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--neutral-muted);
+  margin-top: 0.75rem;
+}
+
+/* ============================
+   MEDIA QUERIES – TABLET / DESKTOP
+   ============================ */
+
+/* TABLET I ŠIRE */
+@media (min-width: 768px) {
+  .page {
+    padding: 0 1.5rem 2.25rem;
+  }
+
+  main {
+    padding: 24px;
+  }
+
+  /* Navigacija – klasični horizontalni meni */
+  .main-nav::before {
+    display: none;
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+  }
+
+  .main-nav a {
+    min-width: 7rem;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  /* Kontakt forma – 2 stupca za prva dva polja */
+  .lego-contact,
+  .kontakt-forma {
+    padding: 2rem 2rem;
+  }
+
+  .lego-form,
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.25rem;
+    row-gap: 1rem;
+  }
+
+  .lego-form .form-row,
+  form > div {
+    margin-bottom: 0;
+  }
+
+  /* Ime i prezime dijele red */
+  .lego-form .form-row:nth-child(1),
+  .lego-form .form-row:nth-child(2),
+  form > div:nth-child(1),
+  form > div:nth-child(2) {
+    grid-column: span 1;
+  }
+
+  /* Ostala polja preko cijele širine */
+  .lego-form .form-row:nth-child(n + 3),
+  form > div:nth-child(n + 3) {
+    grid-column: 1 / -1;
+  }
+
+  .lego-form .btn-send,
+  form button {
+    justify-self: flex-start;
+  }
+
+  /* Galerija – grid sa više stupaca */
+  .lego-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .page {
+    padding: 0 2rem 2.5rem;
+  }
+
+  main {
+    padding: 26px 28px;
+  }
+
+  .section {
+    margin-bottom: 28px;
+  }
+
+  .lego-contact,
+  .kontakt-forma {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 2fr);
+    column-gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .lego-contact h2,
+  .lego-contact p,
+  .kontakt-forma h2,
+  .kontakt-forma p {
+    grid-column: 1;
+  }
+
+  .lego-contact .lego-form,
+  .kontakt-forma form {
+    grid-column: 2;
+  }
+}
